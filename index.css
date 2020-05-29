@@ -68,6 +68,12 @@ input:focus {
     outline: none;
 }
 
+svg {
+    fill: none;
+    stroke: var(--colour__dark);
+    stroke-width: 0.75px;
+}
+
 .nav {
     background-color: var(--colour__light);
     position: absolute;
