@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>grid</title>
+
+        <link rel="stylesheet" href="./index.css">
+    </head>
+
+    <body>
+        <nav class="nav" data-nav="nav">
+            <ul class="menu">
+                <li class="menu__dropdown">
+                    ▦
+
+                    <ul class="menu__dropdown-options">
+                        <li class="menu__dropdown-option" data-menu-toggle-nav>
+                            <span>Toggle Menu</span>
+                            <span class="menu__input">Esc</span>
+                        </li>
+
+                        <li class="menu__dropdown-option" data-menu-toggle-cpanel>
+                            <span>Toggle cPanel</span>
+                            <span class="menu__input">Space</span>
+                        </li>
+
+                        <li class="menu__dropdown-option" data-menu-toggle-about>
+                            <span>About</span>
+                            <span class="menu__input">?</span>
+                        </li>
+
+                        <li class="menu__dropdown-option" data-menu-toggle-log>
+                            <span>Toggle Log</span>
+                            <span class="menu__input">`</span>
+                        </li>
+                        
+                        <li class="menu__dropdown-option">
+                            <span>Quit</span>
+                            <span class="menu__input">End</span>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu__dropdown">
+                    File
+
+                    <ul class="menu__dropdown-options">
+                        <li class="menu__dropdown-option" data-menu-new>
+                            <span>New</span>
+                            <span class="menu__input">N</span>
+                        </li>
+                        <li class="menu__dropdown-option" data-menu-export-as-png>
+                            <span>Export As .png</span>
+                            <span class="menu__input">E</span>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu__dropdown">
+                    Edit
+
+                    <ul class="menu__dropdown-options">
+                        <li class="menu__dropdown-option" data-menu-step-backward>
+                            <span>Step Backward</span>
+                            <span class="menu__input">Z</span>
+                        </li>
+                        <li class="menu__dropdown-option" data-menu-step-forward>
+                            <span>Step Forward</span>
+                            <span class="menu__input">X</span>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu__dropdown">
+                    Canvas
+
+                    <ul class="menu__dropdown-options">
+                        <li class="menu__dropdown-option" data-menu-open-background-colour-picker>
+                            <span>Background Colour</span>
+                            <span class="menu__input">B</span>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu__dropdown">
+                    Stroke
+
+                    <ul class="menu__dropdown-options">
+                        <li class="menu__dropdown-option" data-menu-increase-stroke-width>
+                            <span>Increase Stroke</span>
+                            <span class="menu__input">[</span>
+                        </li>
+
+                        <li class="menu__dropdown-option" data-menu-decrease-stroke-width>
+                            <span>Decrease Stroke</span>
+                            <span class="menu__input">]</span>
+                        </li>
+
+                        <li class="menu__dropdown-option" data-menu-open-stroke-colour-picker>
+                            <span>Stroke Colour</span>
+                            <span class="menu__input">C</span>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="menu__dropdown">
+                    View
+
+                    <ul class="menu__dropdown-options">
+                        <li class="menu__dropdown-option" data-menu-toggle-cursor>
+                            <span>Toggle Cursor</span>
+                            <span class="menu__input">H</span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <main class="grid" data-grid></main>
+
+        <aside class="cpanel cpanel--hidden" data-cpanel>
+            <div class="control-container">
+                <label for="columns">columns</label>
+                <input class="control" type="number" id="columns" name="columns" tabindex="-1" min="1" value="10" data-cpanel-columns data-cpanel-control="--grid__columns">
+            </div>
+
+            <div class="control-container">
+                <label for="rows">rows</label>
+                <input class="control" type="number" id="rows" name="rows" tabindex="-1" min="1" value="10" data-cpanel-rows data-cpanel-control="--grid__rows">
+            </div>
+
+            <div class="control-container">
+                <label for="columnGap">column gap</label>
+                <input class="control" type="number" id="columnGap" name="columnGap" min="0" value="0" tabindex="-1" data-cpanel-column-gap data-cpanel-control="--grid__column-gap" data-unit="px">
+            </div>
+
+            <div class="control-container">
+                <label for="columnGap">row gap</label>
+                <input class="control" type="number" id="rowGap" name="rowGap" min="0" value="0" tabindex="-1" data-cpanel-row-gap data-cpanel-control="--grid__row-gap" data-unit="px">
+            </div>
+
+            <div class="control-container">
+                <label for="strokeWidth">stroke</label>
+                <input class="control" type="number" id="strokeWidth" name="strokeWidth" min="1" value="1" tabindex="-1" data-unit="px" data-cpanel-stroke-width data-cpanel-control="--grid__stroke-width">
+            </div>
+
+            <div class="control-container">
+                <label for="strokeColour">stroke color</label>
+                <input class="control--colour" type="color" id="strokeColour" name="strokeColour" value="#000000" tabindex="-1" data-cpanel-stroke-colour data-cpanel-color-control="--grid__stroke-colour">
+            </div>
+
+            <div class="control-container">
+                <label for="strokeOpacity">stroke opacity</label>
+                <input class="control" type="number" id="strokeOpacity" name="strokeOpacity" min="0" max="255" value="255" tabindex="-1" data-cpanel-stroke-opacity data-cpanel-control="--grid__stroke-opacity">
+            </div>
+
+            <div class="control-container">
+                <label for="backgroundColour">background colour</label>
+                <input class="control--colour" type="color" id="backgroundColour" name="backgroundColour" value="#FFFFFF" tabindex="-1" data-cpanel-background-colour data-cpanel-color-control="--grid__background-colour">
+            </div>
+        </aside>
+
+        <aside class="log log--hidden" data-log tabindex="-1">
+            <div class="log__wrapper" data-log-list>
+            </div>
+        </aside>
+
+        <aside class="about about--hidden" data-about>
+            <div class="about__x" data-about-x>x</div>
+
+            <div class="deianeira-mark">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.17 61.9" width="82.17px">
+                    <circle cx="30.95" cy="30.95" r="30.6"/>
+                    <circle cx="51.22" cy="30.95" r="30.6"/>
+                    <circle cx="51.22" cy="30.95" r="10.13"/>
+                    <circle cx="30.95" cy="30.95" r="10.13"/>
+                    <circle cx="41.08" cy="30.95" r="30.6"/>
+                    <circle cx="41.08" cy="30.95" r="10.13"/>
+                </svg>
+            </div>
+
+            <span class="about__info">MMXX <a href="http://deianeira.co">Δηϊάνειρα</a></span>
+
+            <span class="about__info">v1.0.0</span>
+            <span class="about__info"><a href="http://github.com/de1ane1ra/grid">Repository</a></span>
+            <span class="about__info">Thank you & enjoy.</span>
+        </aside>
+
+        <script src="./index.js"></script>
+    </body>
+</html>
