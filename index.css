@@ -231,8 +231,8 @@ svg {
     grid-template-rows: repeat(var(--grid__rows), 1fr);
     grid-column-gap: var(--grid__column-gap);
     grid-row-gap: var(--grid__row-gap);
-    width: 12in;
-    height: 12in;
+    width: 90vh;
+    height: 90vh;
 }
 
 .grid__item {
